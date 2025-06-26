@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🧠 Argent Codex Dashboard</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: cyan;
+    }
+    .button-bar button {
+      margin: 5px;
+      padding: 8px 16px;
+      background: #333;
+      color: white;
+      border: 1px solid #555;
+      cursor: pointer;
+    }
+    .button-bar button:hover {
+      background: #555;
+    }
+    .content-section {
+      margin-top: 20px;
+      padding: 10px;
+      background: #222;
+      display: none;
+    }
+    .status {
+      color: lime;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Argent Codex Dashboard</h1>
+  <p>Status: <span class="status">LIVE SYNC ACTIVE</span></p>
+  <p>This is the live version of the dashboard. Modules will be loaded dynamically from <code>live-modules.json</code>.</p>
+
+  <div class="button-bar">
+    <button onclick="showTab('grid')">Grid</button>
+    <button onclick="showTab('npc')">NPC</button>
+    <button onclick="showTab('rumors')">Rumors</button>
+    <button onclick="showTab('sitri')">Sitri</button>
+    <button onclick="showTab('timeline')">Timeline</button>
+  </div>
+
+  <div id="grid" class="content-section"><h2>📍 Grid Cell Lookup</h2><p>Coming soon...</p></div>
+  <div id="npc" class="content-section"><h2>🧙 NPC Generator</h2><p>Coming soon...</p></div>
+  <div id="rumors" class="content-section"><h2>💬 Rumor Engine</h2><p>Coming soon...</p></div>
+  <div id="sitri" class="content-section"><h2>🕯️ Sitri Curse Tracker</h2><p>Coming soon...</p></div>
+  <div id="timeline" class="content-section"><h2>🗓️ Timeline + Faction Log</h2><p>Coming soon...</p></div>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    // Future: Auto-load modules from live-modules.json
+  </script>
+</body>
+</html>
