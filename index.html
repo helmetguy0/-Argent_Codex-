@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🧠 Argent Codex Dashboard</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1em;
+    }
+    h1, h2 {
+      color: #42c0f5;
+    }
+    .status {
+      color: lime;
+      font-weight: bold;
+    }
+    .nav-btn {
+      margin-right: 8px;
+      background: #333;
+      color: #fff;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+    }
+    #grid-lookup {
+      background: #222;
+      padding: 1em;
+      border-left: 5px solid red;
+      margin-top: 1em;
+    }
+    input[type="text"] {
+      background: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 4px;
+    }
+    .dev-panel {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #111;
+      border: 2px solid lime;
+      padding: 10px;
+      color: lime;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <button class="nav-btn">Grid</button>
+    <button class="nav-btn">NPC</button>
+    <button class="nav-btn">Rumors</button>
+    <button class="nav-btn">Sitri</button>
+    <button class="nav-btn">Timeline</button>
+  </div>
+
+  <div id="grid-lookup">
+    <h2>📍 Grid Cell Lookup</h2>
+    <input id="gridInput" type="text" placeholder="Enter cell..." />
+    <button onclick="lookupCell()">Lookup</button>
+    <div id="gridResult"></div>
+  </div>
+<script>
+  const gridData = {
+    "C17": "Golden text 'SORATH NU SUM' near Moondeep Sea",
+    "F28": "Ramparts of Night — eastern caverns, planar zone",
+    "O9": "Lake of Radiant Mists near Guallidurth",
+    "J13": "Corridor between Cairnheim and Oryndoll",
+    "C25": "Dark shelf in The Cold Sea",
+    "I9": "Duergar trade tunnels - empty caverns",
+    "J9": "Illithid scout tunnels - ambient psionics",
+    "O28": "Ramparts of Night interior - whisper ruins",
+    "D44": "Center of 'LAKE OF SHADOWS', surge node",
+    "F44": "Lake of Shadows — glowing silt watchers",
+    "K47": "Cavern junction near fungus rail",
+    "D79": "Cold Sea trench drop-off"
+  };
+
+  function lookupCell() {
+    const cell = document.getElementById("gridInput").value.toUpperCase();
+    const result = document.getElementById("gridResult");
+    result.innerHTML = gridData[cell]
+      ? `<strong>${cell}:</strong> ${gridData[cell]}`
+      : `<span style="color:red;">❌ No data for ${cell}</span>`;
+  }
+
+  // Live module loader
+  async function loadModules() {
+    try {
+      const res = await fetch("live-modules.json");
+      const mods = await res.json();
+      mods.modules.forEach(mod => {
+        const div = document.createElement("div");
+        div.className = "module";
+        div.innerHTML = `<h2>📦 ${mod.name}</h2><p>${mod.description}</p>`;
+        document.body.appendChild(div);
+      });
+    } catch (e) {
+      console.error("Failed to load modules:", e);
+    }
+  }
+
+  loadModules();
+</script>
+
+<div class="dev-panel">
+  Dev Panel Active — <strong>Live Sync Ready</strong>
+</div>
+
+</body>
+</html>
