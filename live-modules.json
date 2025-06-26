@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "id": "dev-panel",
+      "name": "Dev Panel",
+      "status": "active",
+      "description": "Core live sync Dev Panel for status and manual patching."
+    },
+    {
+      "id": "grid-lookup",
+      "name": "Grid Cell Lookup",
+      "status": "active",
+      "description": "Minimal grid search bar embedded for reference testing."
+    }
+  ]
+}
