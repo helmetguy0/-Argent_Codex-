@@ -1,16 +1,8 @@
 {
   "modules": [
     {
-      "id": "dev-panel",
-      "name": "Dev Panel",
-      "status": "active",
-      "description": "Core live sync Dev Panel for status and manual patching."
-    },
-    {
-      "id": "grid-lookup",
-      "name": "Grid Cell Lookup",
-      "status": "active",
-      "description": "Minimal grid search bar embedded for reference testing."
+      "name": "🧠 Monster Lookup",
+      "description": "Search monsters from the Alphabetized_Monster_List.csv. Click a name to view stats, loot, and XP. Source-locked by campaign rules."
     }
   ]
 }
