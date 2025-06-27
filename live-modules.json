@@ -1,0 +1,254 @@
+{
+  "grid": {
+    "C25": {
+      "location": "Player Town",
+      "region": "Northern Greenfields",
+      "threat": "Low planar bleed"
+    },
+    "F28": {
+      "location": "Snakewood Edge",
+      "region": "Shadowed Forest Border",
+      "threat": "Moderate \u2013 Dream Creatures Detected"
+    }
+  },
+  "monsters": {
+    "aarakocra aeromancer": {
+      "row": 1,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "aarakocra skirmisher": {
+      "row": 2,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "aberrant cultist": {
+      "row": 3,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "abishai": {
+      "row": 4,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "abjurer wizard": {
+      "row": 5,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "aboleth": {
+      "row": 6,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "aboleth broodmother": {
+      "row": 7,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "aboling": {
+      "row": 8,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "abominable beauty": {
+      "row": 9,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "abominable yeti": {
+      "row": 10,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "accursed defiler": {
+      "row": 11,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult black dragon": {
+      "row": 12,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult blue dragon": {
+      "row": 13,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult brass dragon": {
+      "row": 14,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult bronze dragon": {
+      "row": 15,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult copper dragon": {
+      "row": 16,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult giant antlion": {
+      "row": 17,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult gold dragon": {
+      "row": 18,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult green dragon": {
+      "row": 19,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    },
+    "adult kruthik": {
+      "row": 20,
+      "ac": "\u2014",
+      "hp": "\u2014",
+      "type": "\u2014",
+      "loot": "\u2014",
+      "source": "Approved Monster List"
+    }
+  },
+  "items": {
+    "*stat blocks for these creatures (except the card drawer) appear in the monster manual.": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "+1 armor": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "+1 armor (plate armor)": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "+1 weapon": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "00\txorn": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "00\tyou can take a magic action to conjure a spectral entity that resembles a shadowy elf if you don\u2019t already have one serving you. the entity appears in an unoccupied space within 120 feet of you. it uses the shadow stat block with these changes: it is a fey, has a neutral alignment, and doesn\u2019t create new shadows. you control this entity, deciding how it acts and moves. it remains until it drops to 0 hit points or you dismiss it as a magic action.": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\t5d4 toadstools sprout. if a creature eats a toadstool, roll any die. on an odd roll, the eater must succeed on a dc 15 constitution saving throw or take 5d6 poison damage and have the poisoned condition for 1 hour. on an even roll, the eater gains 5d6 temporary hit points for 1 hour.": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201303\tadult red dragon": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201305\tabyss": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201308\t15\u201318\teuryale": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201308\tbag of 100 gp": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201310\taberrations": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201315\tanimal lord": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201320\t3 ft. \u00d7 5 ft.\t200 lb.\t80 feet": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201320\tanchor\tuncommon": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201320\tyou cast a spell originating from the chosen point. roll 1d10 to determine the spell: on a 1\u20132, darkness; on a 3\u20134, faerie fire; on a 5\u20136, fireball; on a 7\u20138, slow; on a 9\u201310, stinking cloud.": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201340\tsilver\t2\tnone": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201350\tno creature": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    },
+    "01\u201350\tthe sphere is destroyed.": {
+      "description": "Item details pending.",
+      "source": "Approved Item List"
+    }
+  }
+}
