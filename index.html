@@ -16,6 +16,32 @@
     #status { color: #48ff00; }
   </style>
 </head>
+<script>
+  async function loadPanels() {
+    const res = await fetch('panel-config.json');
+    const panels = await res.json();
+    const nav = document.createElement('div');
+    const container = document.createElement('div');
+
+    panels.forEach(panel => {
+      // Nav Button
+      const btn = document.createElement('button');
+      btn.innerText = panel.navButton.label;
+      btn.onclick = () => {
+        container.innerHTML = `<h2>${panel.title}</h2>${panel.content}`;
+        const script = document.createElement('script');
+        script.src = panel.scriptURL;
+        document.body.appendChild(script);
+      };
+      nav.appendChild(btn);
+    });
+
+    document.body.appendChild(nav);
+    document.body.appendChild(container);
+  }
+
+  window.onload = loadPanels;
+</script>
 <body>
   <section class="section">
     <h1 class="title">Argent Codex Dashboard</h1>
