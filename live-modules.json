@@ -1,8 +1,16 @@
-{
-  "modules": [
-    {
-      "name": "🧠 Monster Lookup",
-      "description": "Search monsters from the Alphabetized_Monster_List.csv. Click a name to view stats, loot, and XP. Source-locked by campaign rules."
-    }
-  ]
-}
+[
+  {
+    "id": "monsters",
+    "title": "🧟 Monster Lookup",
+    "navButton": { "label": "Monsters" },
+    "content": "<input type='text' id='monsterSearch' placeholder='Search monsters...'>",
+    "scriptURL": "https://theo.codex.modules/scripts/monster-panel.js"
+  },
+  {
+    "id": "items",
+    "title": "🧰 Item Lookup",
+    "navButton": { "label": "Items" },
+    "content": "<input type='text' id='itemSearch' placeholder='Search items...'>",
+    "scriptURL": "https://theo.codex.modules/scripts/item-panel.js"
+  }
+]
