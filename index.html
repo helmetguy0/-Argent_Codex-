@@ -2,6 +2,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+// Codex Interface Bridge
+window.codexInterface = {
+  notify(action, payload) {
+    console.log("📡 Codex Interface Action:", action, payload);
+    // Hook to AI/server goes here
+  },
+  updatePanel(id, html) {
+    const container = document.querySelector(`#${id}`);
+    if (container) {
+      container.innerHTML = html;
+      console.log("✅ Panel updated:", id);
+    } else {
+      console.warn("⚠️ Panel not found:", id);
+    }
+  }
+};
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Argent Codex Dashboard</title>
