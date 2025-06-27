@@ -1,0 +1,42 @@
+[
+  {
+    "navButton": {
+      "label": "\ud83d\udcdc Rumors"
+    },
+    "title": "Rumor Engine",
+    "content": "<div id='rumorFeed'>Loading whispers...</div>",
+    "scriptURL": "modules/rumor-engine.js"
+  },
+  {
+    "navButton": {
+      "label": "\ud83e\ude78 Sitri Tracker"
+    },
+    "title": "Sitri Curse Tracker",
+    "content": "<div id='sitriTracker'>Tracking curse resonance...</div>",
+    "scriptURL": "modules/sitri-tracker.js"
+  },
+  {
+    "navButton": {
+      "label": "\ud83d\udcc6 Timeline"
+    },
+    "title": "Campaign Timeline Log",
+    "content": "<div id='timelineLog'>Chronology loading...</div>",
+    "scriptURL": "modules/timeline-log.js"
+  },
+  {
+    "navButton": {
+      "label": "\u2694\ufe0f Planner"
+    },
+    "title": "Encounter Planner",
+    "content": "<div id='encounterPlanner'>Balance and foes pending...</div>",
+    "scriptURL": "modules/encounter-planner.js"
+  },
+  {
+    "navButton": {
+      "label": "\ud83d\uddfa\ufe0f Maps"
+    },
+    "title": "Faer\u00fbn / Underdark Viewer",
+    "content": "<iframe src='map-viewer.html' style='width:100%; height:500px; border:none;'></iframe>",
+    "scriptURL": "modules/map-viewer.js"
+  }
+]
