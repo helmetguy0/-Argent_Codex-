@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Argent Codex Dashboard</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #e6e6e6;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #f05;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    input, textarea, button, select {
+      font-size: 16px;
+      margin-top: 5px;
+      padding: 8px;
+      background: #1e1e1e;
+      border: 1px solid #444;
+      color: #eee;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #f05;
+      color: #fff;
+    }
+    .output {
+      margin-top: 10px;
+      padding: 10px;
+      background: #1e1e1e;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧭 Argent Codex Dashboard</h1>
+  <div class="section">
+    <h2>📍 Grid Cell Lookup</h2>
+    <input type="text" id="cellInput" placeholder="e.g. C17">
+    <button onclick="lookupCell()">Lookup</button>
+    <div id="gridResult" class="output"></div>
+  </div>
+
+  <div class="section">
+    <h2>🐉 Monster Lookup</h2>
+    <input type="text" id="monsterInput" placeholder="Goblin">
+    <button onclick="lookupMonster()">Search</button>
+    <div id="monsterResult" class="output"></div>
+  </div>
+
+  <div class="section">
+    <h2>📦 Item Lookup</h2>
+    <input type="text" id="itemInput" placeholder="Potion of Healing">
+    <button onclick="lookupItem()">Search</button>
+    <div id="itemResult" class="output"></div>
+  </div>
+
+  <script>
+    const gridData = {
+      "C17": "Golden text 'SORATH NU SUM' – Moondeep Sea arc.",
+      "F28": "Ramparts of Night — eastern caverns near planar rift.",
+      "O9": "Lake of Radiant Mists — Guallidurth coast nearby.",
+      "J13": "Tunnel span between Cairnheim & Oryndoll — duergar ruins."
+    };
+
+    const monsterData = {
+      "goblin": "🧠 Goblin – CR 1/4 – Nimble, darkvision 60 ft, shortbow, scimitar. Source: MM",
+      "ogre": "🧠 Ogre – CR 2 – Brute force, 40 HP, greatclub, javelins. Source: MM"
+    };
+
+    const itemData = {
+      "potion of healing": "🧪 Potion of Healing – Regains 2d4+2 HP. Source: PHB",
+      "bag of holding": "🎒 Bag of Holding – 500 lb capacity, 64 cu ft. Source: DMG"
+    };
+
+    function lookupCell() {
+      const cell = document.getElementById("cellInput").value.toUpperCase();
+      document.getElementById("gridResult").innerHTML = gridData[cell] || "❌ No info for that cell.";
+    }
+
+    function lookupMonster() {
+      const name = document.getElementById("monsterInput").value.toLowerCase();
+      document.getElementById("monsterResult").innerHTML = monsterData[name] || "❌ Monster not found.";
+    }
+
+    function lookupItem() {
+      const name = document.getElementById("itemInput").value.toLowerCase();
+      document.getElementById("itemResult").innerHTML = itemData[name] || "❌ Item not found.";
+    }
+  </script>
+</body>
+</html>
