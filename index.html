@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Argent Codex: Godmode Ultimate v3.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet" />
+  <style>
+    body { background: #111; color: #eee; padding: 2rem; }
+    .banner {
+      background: linear-gradient(to right, #00ff00, #00ccff);
+      color: #000; font-size: 2rem; padding: 1rem;
+      border-radius: 1rem; margin-bottom: 1rem; text-align: center;
+    }
+    .version-tag { text-align: center; color: #f9b74a; font-size: 0.95rem; margin-bottom: 2rem; }
+    .module { background: #1e1e1e; padding: 1rem; margin-bottom: 1rem; border-radius: 0.75rem; }
+    h2 { color: #fff066; }
+    textarea, input, button { margin-top: 0.5rem; }
+  </style>
+  <script>
+    window.codexInterface = {
+      notify(action, payload) {
+        console.log("Codex action:", action, payload);
+        // Hook for AI or AboveVTT bridge
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="banner">✅ GODMODE LOADED</div>
+  <div class="version-tag">🧱 Build: GODMODE FINAL v3.0</div>
+  <h1 class="title is-2">Argent Codex: All Systems Online</h1>
+  <p class="subtitle is-5">The weave bends to your will. All modules embedded.</p>
+
+  <div class="module">
+    <h2>🧟 Encounter Planner</h2>
+    <button onclick="window.codexInterface.notify('open', 'encounter-planner')">Open Planner</button>
+  </div>
+
+  <div class="module">
+    <h2>📦 Monster & Item Lookup</h2>
+    <input id="lookup" placeholder="Type name..." />
+    <button onclick="lookupEntity()">Search</button>
+    <pre id="lookupResult"></pre>
+  </div>
+
+  <div class="module">
+    <h2>🗺️ Grid Map Viewer</h2>
+    <input id="gridInput" placeholder="Grid Cell (e.g., K47)" />
+    <button onclick="gridLookup()">Lookup</button>
+    <pre id="gridResult"></pre>
+  </div>
+
+  <div class="module">
+    <h2>🧠 Codex Memory</h2>
+    <textarea id="codex" placeholder="World notes, NPCs..."></textarea><br>
+    <button onclick="saveCodex()">Save Memory</button>
+  </div>
+
+  <div class="module">
+    <h2>🕰️ Timeline Log</h2>
+    <textarea id="log" placeholder="Add timeline event..."></textarea><br>
+    <button onclick="addLog()">Add Entry</button>
+    <ul id="timeline"></ul>
+  </div>
+
+  <div class="module">
+    <h2>🧬 Sitri Resonance Engine</h2>
+    <p>Corruption: <span id="corruption">7%</span></p>
+    <button onclick="adjustCorruption(5)">Increase</button>
+    <button onclick="adjustCorruption(-5)">Cleanse</button>
+  </div>
+
+  <div class="module">
+    <h2>💬 NPC Generator</h2>
+    <button onclick="genNPC()">Generate</button>
+    <pre id="npcResult"></pre>
+  </div>
+
+  <div class="module">
+    <h2>⚔️ Initiative Tracker</h2>
+    <textarea id="initList" placeholder="Name, HP, AC..."></textarea><br>
+    <button onclick="sortInit()">Sort</button>
+    <ul id="initResult"></ul>
+  </div>
+
+  <div class="module">
+    <h2>🔊 Sound FX</h2>
+    <button onclick="playFX('tavern')">Tavern</button>
+    <button onclick="playFX('portal')">Portal</button>
+    <button onclick="playFX('howl')">Howl</button>
+  </div>
+
+  <div class="module">
+    <h2>📤 Save/Load</h2>
+    <button onclick="exportCodex()">Export State</button>
+    <input type="file" onchange="importCodex(event)" />
+  </div>
+
+  <script>
+    function lookupEntity() {
+      const q = document.getElementById('lookup').value;
+      window.codexInterface.notify('lookup', q);
+      document.getElementById('lookupResult').textContent = '⏳ Searching for "' + q + '"...';
+    }
+    function gridLookup() {
+      const cell = document.getElementById('gridInput').value;
+      window.codexInterface.notify('grid-lookup', cell);
+      document.getElementById('gridResult').textContent = '📍 Grid ' + cell.toUpperCase();
+    }
+    function saveCodex() {
+      const data = document.getElementById('codex').value;
+      window.localStorage.setItem("codexMemory", data);
+      alert("Codex memory saved.");
+    }
+    function addLog() {
+      const item = document.getElementById('log').value;
+      const li = document.createElement('li');
+      li.textContent = item + " (" + new Date().toLocaleTimeString() + ")";
+      document.getElementById('timeline').appendChild(li);
+    }
+    let corruption = 7;
+    function adjustCorruption(amount) {
+      corruption = Math.max(0, Math.min(100, corruption + amount));
+      document.getElementById('corruption').textContent = corruption + "%";
+      window.codexInterface.notify('corruption', corruption);
+    }
+    function genNPC() {
+      const names = ['Varna', 'Drogan', 'Elesha', 'Thorn', 'Myxil'];
+      const quirks = ['stutters', 'glows faintly', 'is missing a shadow', 'has silver eyes'];
+      const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+      const npc = `${pick(names)}, who ${pick(quirks)}`;
+      document.getElementById('npcResult').textContent = npc;
+    }
+    function sortInit() {
+      const lines = document.getElementById('initList').value.split('\n').sort();
+      const ul = document.getElementById('initResult');
+      ul.innerHTML = ''; lines.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name; ul.appendChild(li);
+      });
+    }
+    function playFX(name) {
+      window.codexInterface.notify('sound-fx', name);
+      alert("🔊 Playing: " + name);
+    }
+    function exportCodex() {
+      const blob = new Blob([document.getElementById('codex').value], {type: 'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'codex.txt'; a.click();
+      URL.revokeObjectURL(url);
+    }
+    function importCodex(e) {
+      const reader = new FileReader();
+      reader.onload = () => { document.getElementById('codex').value = reader.result; };
+      reader.readAsText(e.target.files[0]);
+    }
+  </script>
+</body>
+</html>
