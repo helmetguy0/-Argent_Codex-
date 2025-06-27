@@ -1,15 +1,7 @@
-
 <!-- Argent Codex Dashboard: Fully Integrated Build -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  window.codexInterface = {
-  notify(action, payload) {
-    console.log("Codex action:", action, payload);
-    // Eventually, this could call a real AI endpoint or local bridge
-  }
-};
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Argent Codex Dashboard</title>
@@ -31,7 +23,6 @@
     const container = document.createElement('div');
 
     panels.forEach(panel => {
-      // Nav Button
       const btn = document.createElement('button');
       btn.innerText = panel.navButton.label;
       btn.onclick = () => {
