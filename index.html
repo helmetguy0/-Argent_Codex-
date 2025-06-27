@@ -97,6 +97,40 @@
 
   loadModules();
 </script>
+<script>
+fetch("live-modules.json")
+  .then(response => response.json())
+  .then(data => {
+    const nav = document.querySelector(".button-bar");
+    const container = document.querySelector("body");
+
+    data.modules.forEach(mod => {
+      // Add navigation button
+      const btn = document.createElement("button");
+      btn.textContent = mod.navButton.label;
+      btn.onclick = () => {
+        document.querySelectorAll(".content-section").forEach(sec => sec.style.display = "none");
+        document.getElementById(mod.id).style.display = "block";
+      };
+      nav.appendChild(btn);
+
+      // Create content section
+      const section = document.createElement("div");
+      section.className = "content-section";
+      section.id = mod.id;
+      section.innerHTML = `<h2>${mod.title}</h2>${mod.content}`;
+      section.style.display = "none";
+      container.appendChild(section);
+
+      // Dynamically load the JS for the module
+      if (mod.scriptURL) {
+        const script = document.createElement("script");
+        script.src = mod.scriptURL;
+        document.body.appendChild(script);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
