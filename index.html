@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Argent Codex: Godmode Ultimate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+  <style>
+    body { background: #111; color: #eee; padding: 2rem; }
+    .banner {
+      background: linear-gradient(to right, #00ff00, #00ccff);
+      color: #000;
+      font-size: 2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .title, .subtitle { color: #e3e3e3; }
+    .box { background: #1b1b1b; padding: 1rem; border-radius: 1rem; margin-bottom: 1.5rem; }
+    textarea, input { background: #222; color: #fff; border: 1px solid #444; padding: 0.5rem; width: 100%; }
+    button { margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="banner">✅ GODMODE LOADED</div>
+  <h1 class="title is-2">Argent Codex: Dashboard Core (Godmode Enabled)</h1>
+  <p class="subtitle is-5">All systems are live and reactive. Let the world respond.</p>
+
+  <div class="box">
+    <h2 class="subtitle">🧬 Sitri Corruption Tracker</h2>
+    <p id="sitriLevel">Resonance: 12%</p>
+    <button onclick="increaseCurse()">Increase Curse</button>
+    <button onclick="cleanseCurse()">Cleanse</button>
+  </div>
+
+  <div class="box">
+    <h2 class="subtitle">🧠 Codex Memory</h2>
+    <textarea id="codexMemory" placeholder="World notes, NPCs, planar bleed..."></textarea>
+    <button onclick="saveMemory()">Save Memory</button>
+  </div>
+
+  <div class="box">
+    <h2 class="subtitle">📜 Timeline Log</h2>
+    <div id="timelineLog"></div>
+    <button onclick="addTimelineEntry()">Add Entry</button>
+  </div>
+
+  <script>
+    let curse = 12;
+    function updateSitri() {
+      document.getElementById('sitriLevel').textContent = "Resonance: " + curse + "%";
+      if (curse >= 70) document.body.style.background = "#330000";
+    }
+    function increaseCurse() {
+      curse += 5; updateSitri(); codexInterface.notify("curseIncreased", curse);
+    }
+    function cleanseCurse() {
+      curse = Math.max(0, curse - 10); updateSitri(); codexInterface.notify("curseCleansed", curse);
+    }
+    function addTimelineEntry() {
+      const note = prompt("Log this event:");
+      if (!note) return;
+      const div = document.createElement("div");
+      div.textContent = new Date().toLocaleDateString() + ": " + note;
+      document.getElementById("timelineLog").appendChild(div);
+      codexInterface.notify("timelineEntry", note);
+    }
+    function saveMemory() {
+      const notes = document.getElementById("codexMemory").value;
+      localStorage.setItem("codexMemory", notes);
+      codexInterface.notify("memorySaved", notes);
+    }
+    window.onload = () => {
+      const saved = localStorage.getItem("codexMemory");
+      if (saved) document.getElementById("codexMemory").value = saved;
+      updateSitri();
+    };
+    window.codexInterface = {
+      notify(action, payload) {
+        console.log("Codex Event:", action, payload);
+      }
+    };
+  </script>
+</body>
+</html>
